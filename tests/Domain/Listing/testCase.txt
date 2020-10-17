@@ -8,9 +8,9 @@ TODO:
         ✔ Chaque liste DOIT avoir un titre unique @done(20-10-16 21:48)
         ✔ Chaque liste PEUT avoir une description @done(20-10-17 08:46)
     ☐ Taches:
-        ☐ Chaque tache DOIT avoir un titre
-        ☐ Chaque tache DOIT avoir une tache parent
-        ☐ Chaque tache PEUT avoir une description
+        ✔ Chaque tache DOIT avoir un titre @done(20-10-17 13:48)
+        ✔ Chaque tache DOIT avoir une tache parent @done(20-10-17 13:55)
+        ✔ Chaque tache PEUT avoir une description @done(20-10-17 13:59)
         ☐ Chaque tache PEUT avoir une catégorie
         ☐ Chaque tache DOIT avoir un statut
         ☐ Chaque tache DOIT avoir une date de création
