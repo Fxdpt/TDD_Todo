@@ -7,12 +7,12 @@ use App\Domain\Listing\Listing;
 class ListingRepositoryRDB
 {
     /**
-     * @var array
+     * @var array<Listing>
      */
     private $listingCollection;
 
     /**
-     * @param Listing
+     * @param Listing $listing
      * @return void
      */
     public function createListing(Listing $listing)

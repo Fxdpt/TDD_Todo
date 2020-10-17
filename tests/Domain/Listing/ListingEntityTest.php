@@ -36,6 +36,11 @@ class ListingEntityTest extends TestCase
      */
     private $listingRepository;
 
+    /**
+     * @var Task
+     */
+    private $task;
+
     protected function setUp(): void
     {
         $this->listingId = uniqid();
@@ -52,29 +57,29 @@ class ListingEntityTest extends TestCase
         $this->listingCollection = $this->listingService->getListing();
     }
 
-    public function testItShouldHaveAnId()
+    public function testItShouldHaveAnId(): void
     {
         $this->AssertNotNull($this->goodListing->getId());
     }
 
-    public function testItThrowAnExceptionWhenIdIsEmpty()
+    public function testItThrowAnExceptionWhenIdIsEmpty(): void
     {
         $this->expectException(ListingException::class);
         (new Listing())->setId(null);
     }
 
-    public function testItShouldHaveATitle()
+    public function testItShouldHaveATitle(): void
     {
         $this->assertNotEmpty($this->goodListing->getTitle());
     }
 
-    public function testItThrowAnExceptionWhenTitleIsEmpty()
+    public function testItThrowAnExceptionWhenTitleIsEmpty(): void
     {
         $this->expectException(ListingException::class);
         (new Listing())->setId(uniqid())->setTitle(null);
     }
 
-    public function testItShouldHaveAUniqueTitle()
+    public function testItShouldHaveAUniqueTitle(): void
     {
         $listing = (new Listing())->setId(uniqid())->setTitle('A title');
         foreach($this->listingCollection as $list) {
@@ -82,21 +87,21 @@ class ListingEntityTest extends TestCase
         }
     }
 
-    public function testItShouldThrownAnExceptionWhenNonUniqueTitle()
+    public function testItShouldThrownAnExceptionWhenNonUniqueTitle(): void
     {
         $listing = (new Listing())->setId(uniqid())->setTitle('List Title');
         $this->expectException(ListingException::class);
         $this->listingService->createListing($listing);
     }
 
-    public function testItCouldHaveADescription()
+    public function testItCouldHaveADescription(): void
     {
         $this->assertNull($this->goodListing->getDescription());
         $this->goodListing->setDescription('A Description');
         $this->assertNotEmpty($this->goodListing->getDescription());
     }
 
-    public function testItCouldHaveTasks()
+    public function testItCouldHaveTasks(): void
     {
         $this->assertNull($this->goodListing->getTasks());
         $this->goodListing->setTask($this->task);

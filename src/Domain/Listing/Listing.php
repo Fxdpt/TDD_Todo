@@ -96,7 +96,7 @@ class Listing
     }
 
     /**
-     * @return array|null
+     * @return array<Task>|null
      */
     public function getTasks(): ?array
     {

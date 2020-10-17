@@ -2,14 +2,13 @@
 
 namespace App\Domain\Listing;
 
-use App\Infrastructure\Listing\ListingRepositoryRDB;
+use App\Domain\Listing\Listing;
 use App\Domain\Listing\ListingException;
+use App\Infrastructure\Listing\ListingRepositoryRDB;
 
 class ListingService
 {
     /**
-     *
-     *
      * @var ListingRepositoryRDB
      */
     private $listingRepository;
@@ -19,12 +18,10 @@ class ListingService
     }
 
     /**
-     * Undocumented function
-     *
-     * @param string $title
+     * @param Listing $listing
      * @return void
      */
-    public function createListing(Listing $listing)
+    public function createListing(Listing $listing): void
     {
         $listingCollection = $this->listingRepository->getListing();
 
