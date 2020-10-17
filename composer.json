@@ -9,6 +9,7 @@
         }
     },
     "require-dev": {
-        "phpstan/phpstan": "^0.12.50"
+        "phpstan/phpstan": "^0.12.50",
+        "squizlabs/php_codesniffer": "^3.5"
     }
 }

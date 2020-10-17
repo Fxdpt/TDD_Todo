@@ -13,7 +13,8 @@ class ListingService
      */
     private $listingRepository;
 
-    public function __construct(ListingRepositoryRDB $listingRepository){
+    public function __construct(ListingRepositoryRDB $listingRepository)
+    {
         $this->listingRepository = $listingRepository;
     }
 
@@ -27,8 +28,7 @@ class ListingService
 
         if ($listingCollection !== null) {
             foreach ($listingCollection as $list) {
-                if($listing->getTitle() === $list->getTitle())
-                {
+                if ($listing->getTitle() === $list->getTitle()) {
                     throw new ListingException("a list already have the name " . $listing->getTitle());
                 }
             }
@@ -38,11 +38,10 @@ class ListingService
     }
 
     /**
-     * @return Listing[]
+     * @return Listing[]|null
      */
     public function getListing(): ?array
     {
         return $this->listingRepository->getListing();
     }
-
 }

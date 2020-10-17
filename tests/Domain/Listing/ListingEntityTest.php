@@ -22,7 +22,7 @@ class ListingEntityTest extends TestCase
     private $goodListing;
 
     /**
-     * @var Listing[]
+     * @var array<Listing>|null
      */
     private $listingCollection;
 
@@ -82,8 +82,10 @@ class ListingEntityTest extends TestCase
     public function testItShouldHaveAUniqueTitle(): void
     {
         $listing = (new Listing())->setId(uniqid())->setTitle('A title');
-        foreach($this->listingCollection as $list) {
-            $this->assertNotEquals($list->getTitle(), $listing->getTitle());
+        if ($this->listingCollection !== null) {
+            foreach ($this->listingCollection as $list) {
+                $this->assertNotEquals($list->getTitle(), $listing->getTitle());
+            }
         }
     }
 

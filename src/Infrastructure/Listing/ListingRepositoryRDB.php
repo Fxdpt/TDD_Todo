@@ -35,7 +35,7 @@ class ListingRepositoryRDB
     public function getListingById(string $id): ?Listing
     {
         foreach ($this->listingCollection as $listing) {
-            if($listing->getId() === $id) {
+            if ($listing->getId() === $id) {
                 return $listing;
             }
         }
