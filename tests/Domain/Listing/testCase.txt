@@ -1,0 +1,26 @@
+TODO:
+    ☐ Liste:
+        ✔ Chaque liste DOIT avoir un titre @done(20-10-15 07:29)
+        ☐ Chaque liste DOIT avoir une progression basé sur le status de ses taches
+        ✔ Chaque liste PEUT contenir des taches @done(20-10-17 09:09)
+        ☐ Chaque liste PEUT être modifié
+        ☐ Chaque liste PEUT être supprimé
+        ✔ Chaque liste DOIT avoir un titre unique @done(20-10-16 21:48)
+        ✔ Chaque liste PEUT avoir une description @done(20-10-17 08:46)
+    ☐ Taches:
+        ☐ Chaque tache DOIT avoir un titre
+        ☐ Chaque tache DOIT avoir une tache parent
+        ☐ Chaque tache PEUT avoir une description
+        ☐ Chaque tache PEUT avoir une catégorie
+        ☐ Chaque tache DOIT avoir un statut
+        ☐ Chaque tache DOIT avoir une date de création
+        ☐ Chaque tache PEUT avoir des sous taches
+        ☐ Chaque tache DOIT avoir une date de fin SI son statut est terminé
+    ☐ Categories:
+        ☐ Chaque catégorie DOIT avoir un titre
+    ☐ Status:
+        ☐ Chaque statut DOIT etre parmis : TODO / IN PROGRESS / BLOCKED / DONE
+    ☐ Sous taches:
+        ☐ Chaque sous taches DOIT avoir les mêmes attente qu'une tache
+        ☐ Chaque sous taches DOIT avoir une tache parent
+        ☐ Chaque sous tache NE DOIT pas avoir de sous tache
