@@ -85,12 +85,19 @@ class Listing
         return $this;
     }
 
+    /**
+     * @param Task $task
+     * @return self
+     */
     public function setTask(Task $task): self
     {
         $this->tasks[] = $task;
         return $this;
     }
 
+    /**
+     * @return array|null
+     */
     public function getTasks(): ?array
     {
         return $this->tasks;
