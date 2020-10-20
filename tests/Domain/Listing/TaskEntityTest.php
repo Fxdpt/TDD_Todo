@@ -2,12 +2,13 @@
 
 namespace Test\Domain\Listing;
 
-use App\Domain\Listing\Task;
+use App\Domain\Category\Category;
 use App\Domain\Listing\Listing;
-use PHPUnit\Framework\TestCase;
-use App\Domain\Listing\TaskException;
 use App\Domain\Listing\ListingService;
+use App\Domain\Listing\Task;
+use App\Domain\Listing\TaskException;
 use App\Infrastructure\Listing\ListingRepositoryRDB;
+use PHPUnit\Framework\TestCase;
 
 class TaskEntityTest extends TestCase
 {
@@ -52,7 +53,8 @@ class TaskEntityTest extends TestCase
             ->setTitle('List Title');
         $this->task = (new Task())
             ->setTitle('Task Title')
-            ->setParentId($this->goodListing->getId());
+            ->setParentId($this->goodListing->getId())
+            ->setStatus(Task::STATUS_DONE);
 
 
         $this->listingService->createListing($this->goodListing);
@@ -86,5 +88,31 @@ class TaskEntityTest extends TestCase
         $this->assertNull($this->task->getDescription());
         $this->task->setDescription('A Description');
         $this->assertNotEmpty($this->task->getDescription());
+    }
+
+    public function testItCouldHaveACategory(): void
+    {
+        $category = new Category();
+        $this->assertNull($this->task->getCategory());
+        $this->task->setCategory($category);
+        $this->assertNotNull($this->task->getCategory());
+        $this->assertInstanceOf(Category::class, $this->task->getCategory());
+    }
+
+    public function testItShouldHaveAStatus(): void
+    {
+        $this->assertNotNull($this->task->getStatus());
+    }
+
+    public function testItThrownAnExceptionWhenStatusIsEmpty(): void
+    {
+        $this->expectException(TaskException::class);
+        $this->task->setStatus(null);
+    }
+
+    public function testItThrownAnExceptionWhenInvalidStatusIsSet(): void
+    {
+        $this->expectException(TaskException::class);
+        $this->task->setStatus('Invalid Status');
     }
 }

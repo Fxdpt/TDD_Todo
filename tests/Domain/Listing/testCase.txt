@@ -11,15 +11,15 @@ TODO:
         ✔ Chaque tache DOIT avoir un titre @done(20-10-17 13:48)
         ✔ Chaque tache DOIT avoir une tache parent @done(20-10-17 13:55)
         ✔ Chaque tache PEUT avoir une description @done(20-10-17 13:59)
-        ☐ Chaque tache PEUT avoir une catégorie
-        ☐ Chaque tache DOIT avoir un statut
+        ✔ Chaque tache PEUT avoir une catégorie @done(20-10-20 07:28)
+        ✔ Chaque tache DOIT avoir un statut @done(20-10-20 07:39)
         ☐ Chaque tache DOIT avoir une date de création
         ☐ Chaque tache PEUT avoir des sous taches
         ☐ Chaque tache DOIT avoir une date de fin SI son statut est terminé
     ☐ Categories:
         ☐ Chaque catégorie DOIT avoir un titre
     ☐ Status:
-        ☐ Chaque statut DOIT etre parmis : TODO / IN PROGRESS / BLOCKED / DONE
+        ✔ Chaque statut DOIT etre parmis : TODO / IN PROGRESS / BLOCKED / DONE @done(20-10-20 07:39)
     ☐ Sous taches:
         ☐ Chaque sous taches DOIT avoir les mêmes attente qu'une tache
         ☐ Chaque sous taches DOIT avoir une tache parent
